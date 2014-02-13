@@ -1,0 +1,1 @@
+../../SCSlidingCell/SlidingCell/SlidingCell/SCSlidingCell.h

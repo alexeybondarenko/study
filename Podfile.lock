@@ -1,0 +1,16 @@
+PODS:
+  - DSLCalendarView (0.0.1)
+  - SCSlidingCell (0.5.0.1)
+  - UIView+NibLoading (1.0.0)
+
+DEPENDENCIES:
+  - DSLCalendarView (~> 0.0.1)
+  - SCSlidingCell
+  - UIView+NibLoading
+
+SPEC CHECKSUMS:
+  DSLCalendarView: 4baa34bb796a716df488f23c00b3eaeff459d1f4
+  SCSlidingCell: 11007d78cfb6d34469f709ae1e91daad6bccf510
+  UIView+NibLoading: 731bd128ccb9998b43658dc124d910732d3b7420
+
+COCOAPODS: 0.29.0
