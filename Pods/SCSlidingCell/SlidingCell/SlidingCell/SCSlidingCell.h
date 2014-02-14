@@ -15,7 +15,6 @@ typedef enum : NSInteger {
 } SCSlidingCellViewAlignment;
 
 @class SCSlidingCell;
-
 /** Declaration SCSlidingCellView delegate protocol **/
 
 @protocol SCSlidingCellDataSource
@@ -44,6 +43,7 @@ typedef enum : NSInteger {
 @property SCSlidingCellViewAlignment alignment;
 
 @property UIScrollView *scrollView;
+
 @property UIPageControl *pageControl;
 
 @property NSArray *views;

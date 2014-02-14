@@ -9,6 +9,7 @@
 #import "CalendarViewController.h"
 
 #import "CalendarGroupedCell.h"
+#import "CalendarSlideView.h"
 
 @interface CalendarViewController ()
 
@@ -56,7 +57,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self isCalendarCell:nil withIndexPath:indexPath]) return 155;
+    if ([self isCalendarCell:nil withIndexPath:indexPath]) return 280;
     if ([self isDataCell:nil withIndexPath:indexPath]) return 90;
     
     return 44;
@@ -119,7 +120,7 @@
 {
     CalendarGroupedCell *groupedCell = (CalendarGroupedCell*)cell;
     groupedCell.data = [self.data objectAtIndex:indexPath.row];
-    [groupedCell setup];
+    [groupedCell reloadSlides];
     
 }
 -(BOOL)isDataCell:(UITableViewCell *)cell withIndexPath:(NSIndexPath *)indexPath

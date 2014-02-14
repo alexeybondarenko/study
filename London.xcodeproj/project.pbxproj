@@ -131,13 +131,7 @@
 			children = (
 				F7CF920318AB51D400C50A36 /* AppDelegate.h */,
 				F7CF920418AB51D400C50A36 /* AppDelegate.m */,
-				F7CF923518AB5ECB00C50A36 /* CalendarViewController.h */,
-				F7CF923618AB5ECC00C50A36 /* CalendarViewController.m */,
-				F7E7343718ACDB87006A6329 /* CalendarGroupedCell.h */,
-				F7E7343818ACDB87006A6329 /* CalendarGroupedCell.m */,
-				F776458518AD0DAD0095173A /* CalendarSlideView.h */,
-				F776458618AD0DAD0095173A /* CalendarSlideView.m */,
-				F776458A18AD15020095173A /* CalendarSlideView.xib */,
+				F7F24B6C18AE517700693690 /* Calendar */,
 				F7CF920618AB51D400C50A36 /* Main.storyboard */,
 				F7CF920F18AB51D400C50A36 /* Images.xcassets */,
 				F7CF91FB18AB51D400C50A36 /* Supporting Files */,
@@ -174,6 +168,20 @@
 				F7CF921F18AB51D400C50A36 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7F24B6C18AE517700693690 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				F7CF923518AB5ECB00C50A36 /* CalendarViewController.h */,
+				F7CF923618AB5ECC00C50A36 /* CalendarViewController.m */,
+				F7E7343718ACDB87006A6329 /* CalendarGroupedCell.h */,
+				F7E7343818ACDB87006A6329 /* CalendarGroupedCell.m */,
+				F776458518AD0DAD0095173A /* CalendarSlideView.h */,
+				F776458618AD0DAD0095173A /* CalendarSlideView.m */,
+				F776458A18AD15020095173A /* CalendarSlideView.xib */,
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

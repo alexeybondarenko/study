@@ -11,10 +11,26 @@
 
 @implementation CalendarGroupedCell
 
+-(id)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self setup];
+    }
+    return self;
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self setup];
+    }
+    return self;
+}
+
 -(void)setup
 {
-    super.dataSource = self;
-    super.delegate = self;
+    self.dataSource = self;
+    self.delegate = self;
 }
 
 -(NSUInteger)numberOfSlides
@@ -24,11 +40,22 @@
 
 -(UIView *)slideViewForCell:(SCSlidingCell *)cell withIndex:(NSUInteger)index andFrame:(CGRect)frame
 {
+    CalendarSlideView *calendarView = [[CalendarSlideView alloc] init];
+    //@{@"name":@"Английский",@"location":@"203-26",@"task":@"Сделать перевод технического текста",@"date":[NSDate date]}
+    NSDictionary *slideDict = (NSDictionary*)self.data[index];
+    calendarView.nameLabel.text = [slideDict objectForKey:@"name"];
+    calendarView.textLabel.text = [slideDict objectForKey:@"task"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    NSString *stringFromDate = [formatter stringFromDate:[NSDate date]];
     
-//    UIView *view = [[UIView alloc] initWithFrame:frame]; view.backgroundColor = [UIColor colorWithRed:0.1+0.1*index green:0.3+0.05*index blue:0.2+0.15*index alpha:1.0]; return view;
-    CalendarSlideView *calendarView = [[CalendarSlideView alloc] initWithFrame:frame];
+    calendarView.dateLabel.text = stringFromDate;
     return calendarView;
 }
 
-
+-(void)slidingCell:(SCSlidingCell *)slidingCell didSelectedView:(UIView *)view
+{
+    NSLog(@"was selected slide %@", view);
+}
 @end

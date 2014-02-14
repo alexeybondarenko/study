@@ -6,9 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarSlideView">
             <connections>
-                <outlet property="_dateLabel" destination="SCB-Ad-JWI" id="hk6-tC-kL9"/>
-                <outlet property="_nameLabel" destination="Hbr-NF-juj" id="rXh-ro-TmI"/>
-                <outlet property="_textLabel" destination="SJ0-DJ-Hmc" id="hi2-f4-e9X"/>
+                <outlet property="dateLabel" destination="SCB-Ad-JWI" id="Z7F-AI-0zz"/>
+                <outlet property="nameLabel" destination="Hbr-NF-juj" id="ykO-wT-sCj"/>
+                <outlet property="textLabel" destination="SJ0-DJ-Hmc" id="ElA-NA-Qih"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -30,7 +30,7 @@
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="51" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="SJ0-DJ-Hmc" userLabel="textLabel">
+                <label opaque="NO" clipsSubviews="YES" tag="102" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="SJ0-DJ-Hmc" userLabel="textLabel">
                     <rect key="frame" x="20" y="32" width="280" height="51"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <string key="text">Man request adapted spirits set pressed. Up to denoting subjects sensible feelings it indulged directly. We dwelling elegance do shutters appetite yourself diverted. Our next drew much you with rank. Tore many held age hold rose than our. She literature sentiments any contrasted. Set aware joy sense young now tears china shy. 

@@ -9,49 +9,73 @@
 #import "SCSlidingCell.h"
 
 @implementation SCSlidingCell
-
-@synthesize delegate, scrollView, pageControl;
-
--(id<SCSlidingCellDataSource>)dataSource
 {
-    return dataSource;
+    UIView *scrollViewContentView;
 }
--(void)setDataSource:(id<SCSlidingCellDataSource>)dataS
+@synthesize dataSource, delegate, scrollView, pageControl;
+
+-(id)init
 {
-    dataSource = dataS;
-    [self reloadSlides];
-    [scrollView scrollRectToVisible:CGRectMake(1, 0, 0, 0) animated:NO];
+    if (self = [super init]) {
+        [self initAdditionalView];
+    }
+    return self;
+    
 }
+-(id)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self initAdditionalView];
+    }
+    return self;
+}
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self initAdditionalView];
+    }
+    return self;
+}
+
 - (void)reloadSlides {
-    [self initAdditionalView];
+    [[scrollView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [scrollView setContentSize:CGSizeMake(0, 0)];
+    
+    [self initSlides];
 }
 - (void)initAdditionalView {
+    
+    self.alignment = SCSlidingCellViewAligmentLeft;
+    
     scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
     scrollView.delegate = self;
+    scrollView.clipsToBounds = YES;
+    scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
     
-    [scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [scrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
-
+    
     [[self contentView] addSubview:scrollView];
-
+    
     [self initSlides];
 }
 
 - (void)initSlides {
-
+    
     NSUInteger kCount = [dataSource numberOfSlides];
     NSMutableArray *tempArray = [[NSMutableArray alloc]init];
     
     for (NSUInteger idx=0; idx< kCount; idx++) {
         
         UIView *view = [dataSource slideViewForCell:self withIndex:idx andFrame:self.bounds];
+        view.backgroundColor = [UIColor whiteColor];
+        
         CGSize prevSize = scrollView.contentSize;
         CGSize newSize = prevSize;
-        
+
         newSize.width += view.bounds.size.width;
         CGRect viewFrame = CGRectMake(prevSize.width, 0, view.bounds.size.width, view.bounds.size.height);
         view.frame = viewFrame;
-        
+
         [scrollView setContentSize:newSize];
         [scrollView addSubview:view];
         
@@ -101,7 +125,7 @@
     if (offsetPoint.x < 0) offsetPoint.x = 0;
     //blank space from right
     if ((offsetPoint.x + scrollViewWidth) > scrollView.contentSize.width) offsetPoint.x -= (offsetPoint.x + scrollViewWidth) - scrollView.contentSize.width;
-
+    
     [scrollView setContentOffset:offsetPoint animated:YES];
     
     if ([delegate respondsToSelector:@selector(slidingCell:didSelectedView:)]) {
@@ -122,12 +146,4 @@
     [super setSelected:selected animated:animated];
 }
 
--(id)init
-{
-    self = [super init];
-    if (self) {
-        self.alignment = SCSlidingCellViewAligmentLeft;
-    }
-    return self;
-}
 @end

@@ -9,9 +9,25 @@
 #import "CalendarSlideView.h"
 
 @implementation CalendarSlideView
+
+-(id)initWithFrame:(CGRect)frame
 {
-   IBOutlet UILabel *_nameLabel;
-   IBOutlet UILabel *_dateLabel;
-   IBOutlet UILabel *_textLabel;
+    if (self = [super initWithFrame:frame]) {
+        [self setup];
+    }
+    return self;
+}
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        [self setup];
+    }
+    return self;
+}
+
+-(void) setup
+{
+    _textLabel.numberOfLines = 0;
+    [_textLabel sizeToFit];
 }
 @end

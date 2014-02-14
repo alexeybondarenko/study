@@ -37,9 +37,9 @@ SCSlidingCell реализует функционал ячеек со слайд
 {
 	retrun <количество слайдов>;
 }
-- (UIView *) slideViewForIndex:(NSUInteger) index withFrame:(CGRect) frame
+- (UIView *) slideViewForCell:(SCSlidingCell *)cell withIndex:(NSUInteger) index andFrame:(CGRect) frame;
 {
-	return <представление слайда под номером index>;
+	return <представление слайда под номером index для ячейки cell>;
 }
 ```
 Дополнительно можно реализовать методы <SCSlidingCellDelegate>:

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "082EF08D46894C22813AE110"
+               BlueprintIdentifier = "3B2A4F61B8884E389D1F307D"
                BuildableName = "libPods-UIView+NibLoading.a"
                BlueprintName = "Pods-UIView+NibLoading"
                ReferencedContainer = "container:Pods.xcodeproj">

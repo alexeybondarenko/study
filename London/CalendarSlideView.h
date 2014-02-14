@@ -10,4 +10,8 @@
 
 @interface CalendarSlideView : NibLoadedView
 
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UILabel *dateLabel;
+@property (nonatomic, weak) IBOutlet UILabel *textLabel;
+
 @end
